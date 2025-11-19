@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!-- Login Screen -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in_button">Sign in</string>
+    <string name="register_button">Register</string>
+    <string name="forgot_password_link">Forgot password?</string>
+
+    <!-- Main Screen -->
+    <string name="hello_world_logged_in">Hello World! You are logged in!</string>
+    <string name="settings_menu">Settings</string>
+    <string name="profile_menu">Profile</string>
+    <string name="logout_menu">Logout</string>
+
+    <!-- Quote Generator -->
+    <string name="quote_initial_instruction">Select a category and click \"Generate New Quote\".</string>
+    <string name="select_category_first">Select a category first.</string>
+    <string name="generate_quote_to_copy">Generate a quote to copy.</string>
+    <string name="quote_copied">Quote copied!</string>
+    <string name="no_image_to_save">No image to save.</string>
+    <string name="permission_denied_to_save">Permission denied to save image.</string>
+    <string name="image_saved_to_gallery">Image saved to gallery!</string>
+    <string name="image_save_failed">Failed to save image.</string>
+    <string name="image_fetch_failed">Failed to fetch image.</string>
+    <string name="network_error">Network error.</string>
+
+</resources>
