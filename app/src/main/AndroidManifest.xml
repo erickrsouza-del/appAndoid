@@ -46,6 +46,12 @@
         <activity
             android:name=".CurrencyConverterActivity"
             android:exported="false" />
+        <activity
+            android:name=".CepFinderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShoppingListActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

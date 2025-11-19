@@ -1,18 +1,45 @@
 <resources>
     <string name="app_name">My Application</string>
 
+    <!-- Geral -->
+    <string name="required_field">Required.</string>
+
     <!-- Login Screen -->
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="sign_in_button">Sign in</string>
     <string name="register_button">Register</string>
     <string name="forgot_password_link">Forgot password?</string>
+    <string name="reset_password_title">Reset Password</string>
+    <string name="reset_password_email_hint">Enter your email</string>
+    <string name="send_button">Send</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="auth_successful">Authentication successful.</string>
+    <string name="auth_failed">Authentication failed: %1$s</string>
+    <string name="reg_successful">Registration successful.</string>
+    <string name="reg_failed">Registration failed: %1$s</string>
+    <string name="reset_email_sent">Password reset email sent.</string>
+    <string name="reset_email_failed">Failed to send reset email: %1$s</string>
 
     <!-- Main Screen -->
     <string name="hello_world_logged_in">Hello World! You are logged in!</string>
     <string name="settings_menu">Settings</string>
     <string name="profile_menu">Profile</string>
     <string name="logout_menu">Logout</string>
+
+    <!-- Profile Screen -->
+    <string name="user_email_label">Email: %1$s</string>
+    <string name="add_phone_label">Add or update your phone number</string>
+    <string name="phone_number_hint">(99) 99999-9999</string>
+    <string name="send_code_button">Send Verification Code</string>
+    <string name="verification_code_hint">Verification Code</string>
+    <string name="verify_phone_button">Verify Phone Number</string>
+    <string name="phone_format_error">Number must be in E.164 format, e.g. +11234567890</string>
+    <string name="sending_code_toast">Sending verification code...</string>
+    <string name="phone_verification_failed">Phone verification failed: %1$s</string>
+    <string name="code_sent_toast">Code sent.</string>
+    <string name="phone_linked_toast">Phone number verified!</string>
+    <string name="phone_link_failed">Linking failed: %1$s</string>
 
     <!-- Quote Generator -->
     <string name="quote_initial_instruction">Select a category and click \"Generate New Quote\".</string>

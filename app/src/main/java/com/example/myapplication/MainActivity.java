@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -22,6 +24,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.quote_generator_button).setOnClickListener(this);
         findViewById(R.id.temp_converter_button).setOnClickListener(this);
         findViewById(R.id.currency_converter_button).setOnClickListener(this);
+        findViewById(R.id.cep_finder_button).setOnClickListener(this);
+        findViewById(R.id.shopping_list_button).setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +39,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             startActivity(new Intent(this, TempConverterActivity.class));
         } else if (id == R.id.currency_converter_button) {
             startActivity(new Intent(this, CurrencyConverterActivity.class));
+        } else if (id == R.id.cep_finder_button) {
+            startActivity(new Intent(this, CepFinderActivity.class));
+        } else if (id == R.id.shopping_list_button) {
+            startActivity(new Intent(this, ShoppingListActivity.class));
         }
     }
 

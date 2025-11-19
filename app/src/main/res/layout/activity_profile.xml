@@ -12,21 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
+        android:text="Email: "
         android:textSize="18sp"
-        android:textStyle="bold"
-        tools:text="Email: user@example.com" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_phone_label" />
+        android:text="Add or update your phone number" />
 
     <EditText
         android:id="@+id/phone_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/phone_number_hint"
-        android:autofillHints="phone"
+        android:hint="(99) 99999-9999"
         android:inputType="phone" />
 
     <Button
@@ -34,16 +33,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/send_code_button" />
+        android:text="Send Verification Code" />
 
     <EditText
         android:id="@+id/verification_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/verification_code_hint"
+        android:hint="Verification Code"
         android:inputType="number"
-        android:visibility="gone"
+        android:visibility="gone" 
         tools:visibility="visible"/>
 
     <Button
@@ -51,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/verify_phone_button"
+        android:text="Verify Phone Number"
         android:visibility="gone"
         tools:visibility="visible" />
 

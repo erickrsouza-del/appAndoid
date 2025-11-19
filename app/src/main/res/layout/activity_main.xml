@@ -19,47 +19,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <LinearLayout
-        android:id="@+id/features_layout"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@+id/welcome_title"
+        app:layout_constraintBottom_toTopOf="@+id/settings_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/settings_button">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Feature: Quote Generator -->
-        <Button
-            android:id="@+id/quote_generator_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        <LinearLayout
+            android:id="@+id/features_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gerador de Frases"
-            android:drawableLeft="@android:drawable/ic_menu_edit"
-            android:layout_marginBottom="16dp" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <!-- Feature: Temperature Converter -->
-        <Button
-            android:id="@+id/temp_converter_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Conversor de Temperatura"
-            android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
-            android:layout_marginBottom="16dp" />
+            <!-- Feature: Quote Generator -->
+            <Button
+                android:id="@+id/quote_generator_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gerador de Frases"
+                android:drawableLeft="@android:drawable/ic_menu_edit"
+                android:layout_marginBottom="16dp" />
 
-        <!-- Feature: Currency Converter -->
-        <Button
-            android:id="@+id/currency_converter_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Conversor de Moedas"
-            android:drawableLeft="@android:drawable/ic_menu_myplaces" />
+            <!-- Feature: Temperature Converter -->
+            <Button
+                android:id="@+id/temp_converter_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conversor de Temperatura"
+                android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+                android:layout_marginBottom="16dp" />
 
-    </LinearLayout>
+            <!-- Feature: Currency Converter -->
+            <Button
+                android:id="@+id/currency_converter_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conversor de Moedas"
+                android:drawableLeft="@android:drawable/ic_menu_myplaces"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Feature: CEP Finder -->
+            <Button
+                android:id="@+id/cep_finder_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Consultar CEP"
+                android:drawableLeft="@android:drawable/ic_menu_mapmode"
+                android:layout_marginBottom="16dp" />
+                
+            <!-- Feature: Shopping List -->
+            <Button
+                android:id="@+id/shopping_list_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lista de Compras"
+                android:drawableLeft="@android:drawable/ic_menu_agenda" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/settings_button"

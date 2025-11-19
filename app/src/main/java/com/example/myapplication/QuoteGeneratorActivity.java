@@ -24,12 +24,9 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.CustomTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.button.MaterialButton;
 
 import java.io.OutputStream;
@@ -53,6 +50,7 @@ public class QuoteGeneratorActivity extends BaseActivity {
     private UnsplashApiService unsplashApiService;
     private List<Quote> motivationalQuotes, funnyQuotes;
     private Random random = new Random();
+
     private enum Category { MOTIVATIONAL, FUNNY }
     private Category selectedCategory = null;
 
@@ -89,15 +87,22 @@ public class QuoteGeneratorActivity extends BaseActivity {
     }
 
     private void setupRetrofit() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.unsplash.com/").addConverterFactory(GsonConverterFactory.create()).build();
-        unsplashApiService = retrofit.create(UnsplashApiService.class);
+        Retrofit unsplashRetrofit = new Retrofit.Builder().baseUrl("https://api.unsplash.com/").addConverterFactory(GsonConverterFactory.create()).build();
+        unsplashApiService = unsplashRetrofit.create(UnsplashApiService.class);
     }
 
     private void initializeQuotes() {
         motivationalQuotes = new ArrayList<>();
         motivationalQuotes.add(new Quote("A persistência é o caminho do êxito.", "path"));
+        motivationalQuotes.add(new Quote("O sucesso nasce do querer, da determinação e persistência.", "mountain top"));
+        motivationalQuotes.add(new Quote("Acredite em si próprio e chegará um dia em que os outros não terão outra escolha senão acreditar com você.", "believe"));
+        motivationalQuotes.add(new Quote("A vida é 10% o que acontece a você e 90% como você reage a isso.", "reflection"));
+        motivationalQuotes.add(new Quote("O único lugar onde o sucesso vem antes do trabalho é no dicionário.", "book"));
+
         funnyQuotes = new ArrayList<>();
         funnyQuotes.add(new Quote("Não sou preguiçoso, estou em modo de economia de energia.", "lazy cat"));
+        funnyQuotes.add(new Quote("Minha carteira é igual uma cebola, quando abro eu choro.", "empty wallet"));
+        funnyQuotes.add(new Quote("A realidade é uma ilusão que ocorre devido à falta de café.", "coffee"));
     }
 
     private void selectCategory(Category category, Button selected, Button unselected) {
@@ -171,15 +176,13 @@ public class QuoteGeneratorActivity extends BaseActivity {
         Bitmap bitmapToSave = ((BitmapDrawable) drawable).getBitmap();
         
         try {
-            final String relativeLocation = Environment.DIRECTORY_PICTURES + "/MyApplicationQuotes";
             final String displayName = "Quote_" + System.currentTimeMillis() + ".jpg";
 
             ContentValues values = new ContentValues();
             values.put(MediaStore.Images.Media.DISPLAY_NAME, displayName);
             values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                values.put(MediaStore.Images.Media.RELATIVE_PATH, relativeLocation);
-                values.put(MediaStore.Images.Media.IS_PENDING, 1);
+                values.put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES);
             }
 
             Uri collectionUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;

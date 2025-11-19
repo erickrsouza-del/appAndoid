@@ -49,7 +49,7 @@ public class ProfileActivity extends BaseActivity {
         currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null) {
-            userEmailTextView.setText(getString(R.string.user_email_label, currentUser.getEmail()));
+            userEmailTextView.setText("Email: " + currentUser.getEmail());
         }
 
         sendCodeButton.setOnClickListener(v -> sendVerificationCode());
@@ -59,7 +59,7 @@ public class ProfileActivity extends BaseActivity {
     private void sendVerificationCode() {
         String phoneNumber = phoneNumberEditText.getText().toString();
         if (phoneNumber.isEmpty() || !phoneNumber.startsWith("+")) {
-            phoneNumberEditText.setError(getString(R.string.phone_format_error));
+            phoneNumberEditText.setError("Number must be in E.164 format, e.g. +5511999999999");
             return;
         }
 
@@ -74,7 +74,7 @@ public class ProfileActivity extends BaseActivity {
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
 
-        Toast.makeText(this, R.string.sending_code_toast, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sending verification code...", Toast.LENGTH_SHORT).show();
     }
 
     private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
@@ -90,7 +90,7 @@ public class ProfileActivity extends BaseActivity {
                 public void onVerificationFailed(@NonNull FirebaseException e) {
                     Log.w(TAG, "onVerificationFailed", e);
                     String errorMessage = e.getMessage() != null ? e.getMessage() : "Unknown error.";
-                    Toast.makeText(ProfileActivity.this, getString(R.string.phone_verification_failed, errorMessage), Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProfileActivity.this, "Verification failed: " + errorMessage, Toast.LENGTH_LONG).show();
                     sendCodeButton.setEnabled(true);
                 }
 
@@ -101,14 +101,14 @@ public class ProfileActivity extends BaseActivity {
 
                     verificationCodeEditText.setVisibility(View.VISIBLE);
                     verifyButton.setVisibility(View.VISIBLE);
-                    Toast.makeText(ProfileActivity.this, R.string.code_sent_toast, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileActivity.this, "Code sent.", Toast.LENGTH_SHORT).show();
                 }
             };
 
     private void verifyPhoneNumberWithCode() {
         String code = verificationCodeEditText.getText().toString();
         if (code.isEmpty() || code.length() < 6) {
-            verificationCodeEditText.setError(getString(R.string.required_field));
+            verificationCodeEditText.setError("Required.");
             return;
         }
         if (mVerificationId == null || mVerificationId.isEmpty()) {
@@ -128,12 +128,12 @@ public class ProfileActivity extends BaseActivity {
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "User phone number updated.");
-                        Toast.makeText(ProfileActivity.this, R.string.phone_linked_toast, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this, "Phone number verified!", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         Log.w(TAG, "Unable to link phone number.", task.getException());
                         String errorMessage = task.getException() != null ? task.getException().getMessage() : "Unknown error";
-                        Toast.makeText(ProfileActivity.this, getString(R.string.phone_link_failed, errorMessage), Toast.LENGTH_LONG).show();
+                        Toast.makeText(ProfileActivity.this, "Linking failed: " + errorMessage, Toast.LENGTH_LONG).show();
                         sendCodeButton.setEnabled(true);
                     }
                 });
