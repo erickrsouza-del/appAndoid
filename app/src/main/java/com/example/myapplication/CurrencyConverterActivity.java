@@ -83,8 +83,8 @@ public class CurrencyConverterActivity extends BaseActivity {
         ArrayList<String> currencyList = new ArrayList<>(conversionRates.keySet());
         Collections.sort(currencyList);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, currencyList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Use the custom adapter instead of the default one
+        CurrencyAdapter adapter = new CurrencyAdapter(this, currencyList);
 
         spinnerFromCurrency.setAdapter(adapter);
         spinnerToCurrency.setAdapter(adapter);
@@ -108,8 +108,8 @@ public class CurrencyConverterActivity extends BaseActivity {
 
         try {
             double amount = Double.parseDouble(amountStr);
-            String fromCurrency = spinnerFromCurrency.getSelectedItem().toString();
-            String toCurrency = spinnerToCurrency.getSelectedItem().toString();
+            String fromCurrency = (String) spinnerFromCurrency.getSelectedItem();
+            String toCurrency = (String) spinnerToCurrency.getSelectedItem();
 
             Double fromRate = conversionRates.get(fromCurrency);
             Double toRate = conversionRates.get(toCurrency);
@@ -119,7 +119,7 @@ public class CurrencyConverterActivity extends BaseActivity {
                  return;
             }
 
-            // Convert amount to USD first, then to the target currency. The base is already USD.
+            // The base is already USD.
             double convertedAmount = (amount / fromRate) * toRate;
 
             DecimalFormat df = new DecimalFormat("#.##");

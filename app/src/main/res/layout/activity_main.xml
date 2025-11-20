@@ -81,7 +81,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lista de Compras"
-                android:drawableLeft="@android:drawable/ic_menu_agenda" />
+                android:drawableLeft="@android:drawable/ic_menu_agenda"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Feature: Image Capture -->
+            <Button
+                android:id="@+id/image_capture_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capturar Imagem"
+                android:drawableLeft="@android:drawable/ic_menu_camera" />
 
         </LinearLayout>
     </ScrollView>

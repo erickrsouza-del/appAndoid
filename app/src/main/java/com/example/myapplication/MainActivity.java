@@ -26,6 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         findViewById(R.id.currency_converter_button).setOnClickListener(this);
         findViewById(R.id.cep_finder_button).setOnClickListener(this);
         findViewById(R.id.shopping_list_button).setOnClickListener(this);
+        findViewById(R.id.image_capture_button).setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +44,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             startActivity(new Intent(this, CepFinderActivity.class));
         } else if (id == R.id.shopping_list_button) {
             startActivity(new Intent(this, ShoppingListActivity.class));
+        } else if (id == R.id.image_capture_button) {
+            startActivity(new Intent(this, ImageCaptureActivity.class));
         }
     }
 

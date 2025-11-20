@@ -96,13 +96,10 @@ public class QuoteGeneratorActivity extends BaseActivity {
         motivationalQuotes.add(new Quote("A persistência é o caminho do êxito.", "path"));
         motivationalQuotes.add(new Quote("O sucesso nasce do querer, da determinação e persistência.", "mountain top"));
         motivationalQuotes.add(new Quote("Acredite em si próprio e chegará um dia em que os outros não terão outra escolha senão acreditar com você.", "believe"));
-        motivationalQuotes.add(new Quote("A vida é 10% o que acontece a você e 90% como você reage a isso.", "reflection"));
-        motivationalQuotes.add(new Quote("O único lugar onde o sucesso vem antes do trabalho é no dicionário.", "book"));
 
         funnyQuotes = new ArrayList<>();
         funnyQuotes.add(new Quote("Não sou preguiçoso, estou em modo de economia de energia.", "lazy cat"));
         funnyQuotes.add(new Quote("Minha carteira é igual uma cebola, quando abro eu choro.", "empty wallet"));
-        funnyQuotes.add(new Quote("A realidade é uma ilusão que ocorre devido à falta de café.", "coffee"));
     }
 
     private void selectCategory(Category category, Button selected, Button unselected) {
