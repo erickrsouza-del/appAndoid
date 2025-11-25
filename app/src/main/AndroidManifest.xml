@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.gms.auth.api.phone.permission.SEND" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +27,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <receiver
+            android:name=".SmsBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -33,20 +42,15 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:host="myapplicationlogin-d5be6.firebaseapp.com"
-                    android:scheme="https" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"/>
         <activity
             android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".QuoteGeneratorActivity"
@@ -66,6 +70,7 @@
         <activity
             android:name=".ImageCaptureActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>

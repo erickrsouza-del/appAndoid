@@ -8,7 +8,7 @@
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="sign_in_button">Sign in</string>
-    <string name="register_button">Register</string>
+    <string name="register_button">Create Account</string>
     <string name="forgot_password_link">Forgot password?</string>
     <string name="reset_password_title">Reset Password</string>
     <string name="reset_password_email_hint">Enter your email</string>
@@ -16,8 +16,8 @@
     <string name="cancel_button">Cancel</string>
     <string name="auth_successful">Authentication successful.</string>
     <string name="auth_failed">Authentication failed: %1$s</string>
-    <string name="reg_successful">Registration successful.</string>
-    <string name="reg_failed">Registration failed: %1$s</string>
+    <string name="reg_successful">Account created successfully.</string>
+    <string name="reg_failed">Account creation failed: %1$s</string>
     <string name="reset_email_sent">Password reset email sent.</string>
     <string name="reset_email_failed">Failed to send reset email: %1$s</string>
 
@@ -40,6 +40,7 @@
     <string name="code_sent_toast">Code sent.</string>
     <string name="phone_linked_toast">Phone number verified!</string>
     <string name="phone_link_failed">Linking failed: %1$s</string>
+    <string name="verify_your_phone">Verify your phone number</string>
 
     <!-- Quote Generator -->
     <string name="quote_initial_instruction">Select a category and click \"Generate New Quote\".</string>

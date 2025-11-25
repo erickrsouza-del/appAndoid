@@ -6,22 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".ImageCaptureActivity">
 
-    <ImageView
-        android:id="@+id/image_view_captured"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/image_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="fitCenter"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/button_take_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintDimensionRatio="1:1">
+
+        <ImageView
+            android:id="@+id/image_view_captured"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@android:drawable/ic_menu_gallery"/>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <Button
         android:id="@+id/button_take_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tirar Foto"
+        app:icon="@android:drawable/ic_menu_camera"
         app:layout_constraintBottom_toTopOf="@+id/action_buttons_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,11 +51,19 @@
         android:layout_marginBottom="32dp">
 
         <ImageButton
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_delete"
+            android:contentDescription="Descartar Foto"/>
+
+        <ImageButton
             android:id="@+id/button_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_save"
-            android:contentDescription="Salvar na Galeria"/>
+            android:contentDescription="Salvar na Galeria"
+            android:layout_marginStart="32dp"/>
 
         <ImageButton
             android:id="@+id/button_share"

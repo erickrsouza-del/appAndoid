@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.content.FileProvider;
@@ -26,6 +25,7 @@ public class ImageCaptureActivity extends BaseActivity {
 
     private ImageView imageView;
     private LinearLayout actionButtonsLayout;
+    private Button takePictureButton;
     private Uri latestTmpUri;
 
     private final ActivityResultLauncher<Uri> takePictureLauncher = registerForActivityResult(
@@ -33,6 +33,7 @@ public class ImageCaptureActivity extends BaseActivity {
                 if (isSuccess) {
                     imageView.setImageURI(latestTmpUri);
                     actionButtonsLayout.setVisibility(View.VISIBLE);
+                    takePictureButton.setVisibility(View.GONE);
                 }
             });
 
@@ -42,10 +43,11 @@ public class ImageCaptureActivity extends BaseActivity {
         setContentView(R.layout.activity_image_capture);
 
         imageView = findViewById(R.id.image_view_captured);
-        Button takePictureButton = findViewById(R.id.button_take_picture);
+        takePictureButton = findViewById(R.id.button_take_picture);
         actionButtonsLayout = findViewById(R.id.action_buttons_layout);
 
         takePictureButton.setOnClickListener(v -> takePicture());
+        findViewById(R.id.button_delete).setOnClickListener(v -> discardImage());
         findViewById(R.id.button_save).setOnClickListener(v -> saveToGallery());
         findViewById(R.id.button_share).setOnClickListener(v -> shareImage());
     }
@@ -58,6 +60,13 @@ public class ImageCaptureActivity extends BaseActivity {
         } catch (IOException e) {
             Toast.makeText(this, "Failed to create temporary file.", Toast.LENGTH_SHORT).show();
         }
+    }
+    
+    private void discardImage() {
+        imageView.setImageURI(null);
+        latestTmpUri = null;
+        actionButtonsLayout.setVisibility(View.GONE);
+        takePictureButton.setVisibility(View.VISIBLE);
     }
 
     private void saveToGallery() {

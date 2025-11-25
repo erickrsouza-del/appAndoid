@@ -8,7 +8,7 @@
     <string name="email_hint">E-mail</string>
     <string name="password_hint">Senha</string>
     <string name="sign_in_button">Entrar</string>
-    <string name="register_button">Cadastrar</string>
+    <string name="register_button">Criar Conta</string>
     <string name="forgot_password_link">Esqueceu a senha?</string>
     <string name="reset_password_title">Redefinir Senha</string>
     <string name="reset_password_email_hint">Digite seu e-mail</string>
@@ -16,8 +16,8 @@
     <string name="cancel_button">Cancelar</string>
     <string name="auth_successful">Autenticação bem-sucedida.</string>
     <string name="auth_failed">Falha na autenticação: %1$s</string>
-    <string name="reg_successful">Cadastro bem-sucedido.</string>
-    <string name="reg_failed">Falha no cadastro: %1$s</string>
+    <string name="reg_successful">Conta criada com sucesso.</string>
+    <string name="reg_failed">Falha ao criar conta: %1$s</string>
     <string name="reset_email_sent">E-mail para redefinição de senha enviado.</string>
     <string name="reset_email_failed">Falha ao enviar e-mail de redefinição: %1$s</string>
 
@@ -30,7 +30,7 @@
     <!-- Profile Screen -->
     <string name="user_email_label">E-mail: %1$s</string>
     <string name="add_phone_label">Adicione ou atualize seu número de telefone</string>
-    <string name="phone_number_hint">(99) 99999-9999</string>
+    <string name="phone_number_hint">(DDD) 99999-9999</string>
     <string name="send_code_button">Enviar Código de Verificação</string>
     <string name="verification_code_hint">Código de Verificação</string>
     <string name="verify_phone_button">Verificar Número de Telefone</string>
@@ -40,6 +40,7 @@
     <string name="code_sent_toast">Código enviado.</string>
     <string name="phone_linked_toast">Número de telefone verificado!</string>
     <string name="phone_link_failed">Falha ao vincular telefone: %1$s</string>
+    <string name="verify_your_phone">Verifique seu número de telefone</string>
 
     <!-- Quote Generator -->
     <string name="quote_initial_instruction">Selecione uma categoria e clique em \"Gerar Nova Frase\".</string>

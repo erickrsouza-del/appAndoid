@@ -42,13 +42,16 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-auth")
 
+    // SMS Retriever API
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("com.google.android.gms:play-services-auth-api-phone:18.0.2")
+
     // Networking libraries
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // Image loading library
     implementation("com.github.bumptech.glide:glide:4.12.0")
-    // kapt("com.github.bumptech.glide:compiler:4.12.0") // Temporarily commented out
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
